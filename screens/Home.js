@@ -21,17 +21,9 @@ export default function Home({navigation}) {
   const { monthlyNasaData, monthlyNasaDataPending } = nasaData;
   const chartData = monthlyNasaData?.parameter;
   const ALLSKY_KT = chartData?.ALLSKY_KT ?? null;
-
-  // const loaders = (
-    
-  //   <View>
-  //     {console.log("------------", nasaData)}
-  //     { monthlyNasaDataPending ? <ActivityIndicator size="large" color="#00ff00" /> : null }
-      
-  // </View>
-  // )
-  
-  console.log(chartData);
+  const KT = chartData?.KT ?? null;
+  const TS = chartData?.TS ?? null;
+  const PRECTOTCORR = chartData?.PRECTOTCORR ?? null;
   useEffect(() => {
     (async() => getLocation())();
   }, []);
@@ -43,7 +35,6 @@ export default function Home({navigation}) {
   }
 
   const getLocation = async () => {
-    console.log('calling...')
     try{
       await Permissions.askAsync(Permissions.LOCATION);
       let location = await Location.getCurrentPositionAsync();
@@ -53,7 +44,6 @@ export default function Home({navigation}) {
         setLocation({set:false})
       }
     }catch(error){
-      console.log(error);
       setLocation({set:false})
     }
     }
@@ -62,6 +52,8 @@ export default function Home({navigation}) {
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
       <View style={styles.subTitle}>
+        {displayContent === 'Home' ? <Text style={{fontSize:19, marginRight: 10,marginBottom: 10}}>
+          A graph of solar energy produced by the sun in your location (Year: 2020)</Text> : null}
         { !location.set ? (
           <Button
             color='white'
@@ -70,41 +62,33 @@ export default function Home({navigation}) {
             >
                 Set location
           </Button>
-        ) : <Text style={{borderWidth:1, borderColor:'red'}}>welcome
-        {JSON.stringify(monthlyNasaData)}
-        { JSON.stringify(location.coords)}</Text>}
+        ) : null}
       </View>
       <ScrollView contentContainerStyle={styles.content}>
         { displayContent === 'Home' ?
-        <View>
-          {console.log('charaaaaa',ALLSKY_KT)}
-          { monthlyNasaDataPending ? <ActivityIndicator size="large" color="#00ff00" /> :
-          <View>
-            {ALLSKY_KT === null ? <Button onPress={() => handleGetData()}>Get Data</Button>: <CreateChart chartData={ALLSKY_KT}/>}
-            
+        <View style={{width:'100%'}}>
+          <View style={{width:'55%'}}>
+            { monthlyNasaDataPending ? <ActivityIndicator size="large" color="#00ff00" /> :
+            <View>
+              {ALLSKY_KT === null ? <Button onPress={() => handleGetData()}>Get Data</Button>: <CreateChart chartData={ALLSKY_KT}/>}
+              
+            </View>
+          }
           </View>
-        }
-          {/* <CreateChart chartData={ALLSKY_KT}/> */}
-          {/* <CreateChart/>
-          <CreateChart/>
-          <CreateChart/>
-          <CreateChart/> */}
         </View>
         
         : displayContent === 'Monitor' ? 
-        <View style={{borderWidth: 1, borderColor: '#f00', width: '100%'}}>
-          {/* <CreateChart/> */}
-          {/* { loaders} */}
+        <View style={{width: '100%'}}>
           <Monitor/>
         </View>
           
 
-         :<More/>
+         :
+         <View style={{widh: '100%',borderWidth:1, borderColor: 'red'}}>
+           <More precipitation={PRECTOTCORR} kt={KT} ts={TS}/>
+          </View>
       }
       </ScrollView>
-      <View>
-        <Text>Bezier Line Chart</Text>
-      </View>
     </SafeAreaView>
   );
 }
@@ -112,8 +96,9 @@ export default function Home({navigation}) {
 const styles = StyleSheet.create({
   container: {
       flex: 1,
-      width: '100%',
-
+      width: '99%',
+      marginLeft:'auto',
+      marginRight:'auto',
   },
   content:{
     alignItems:'center',
@@ -122,7 +107,7 @@ const styles = StyleSheet.create({
 subTitle:{
   display:'flex',
   borderStyle: 'solid',
-  paddingLeft:10,
+  paddingLeft:5,
 },
   LinearBackground:{
       flex: 1,

@@ -3,10 +3,8 @@ export const numberToDays = (chartData, labels, data, startYear) =>{
     for (const key in chartData) {
         if (chartData.hasOwnProperty(key)) {
           data.push(chartData[key] * 100);  
-            console.log(`ALLKEYS${key}${chartData[key]}`);
             startYear = key.slice(0,4);
             let lastDig = key.slice(-2)
-            // labels.push(key);
             if(parseInt(lastDig) === 1){
               labels.push('Jan');
             } 
