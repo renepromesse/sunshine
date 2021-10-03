@@ -8,8 +8,8 @@ These data can help to decide at which time of the year a user should buy a sola
 
 ##App installation
 ### Requirements
-- Expo client ( download & install `expo client` on play store or app store )
-![image](https://user-images.githubusercontent.com/69194903/135773847-68d70f31-6b10-4ae3-ab7b-f10a0d0cea7b.png)
+- Expo client ( download & install `expo client` on play store or app store ) </br>
+![image](https://user-images.githubusercontent.com/69194903/135773847-68d70f31-6b10-4ae3-ab7b-f10a0d0cea7b.png) </br>
 - a laptop or desktop
 - a mobile phone (android or ios) 
 - or an android studio emulator or xcode for macOS
