@@ -47,8 +47,10 @@ then **confirm** </br>
 - under `Monitor` menu, the user will be able to monitor his panel systems by providing custom data and also compare to nasa data
 (though this section not functional due to a limited amount of time) </br>
 ![image](https://user-images.githubusercontent.com/69194903/135774490-4f55773f-d79f-415d-8272-d96aff9e75b9.png)
-- under `More` section, the user will be able to view different data graphed on the chart including (the temperature, precipitation and sky clearness)
-
+- under `More` section, the user will be able to view different data graphed on the chart including (the temperature, precipitation and sky clearness) </br>
+![image](https://user-images.githubusercontent.com/69194903/135777936-93db808f-adbe-4c1d-a0c3-b0f3a2991724.png)
+</br>
+- end
 
 </br></br></br>
 **I love software engineering, care about the world, and am always </br>
