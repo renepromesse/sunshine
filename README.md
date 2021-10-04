@@ -27,7 +27,7 @@ These data can help to decide at which time of the year a user should buy a sola
 
 ### The app flow
 - Once the app is ready, it will ask for permissions to access your location, 
-then **confirm**
+then **confirm** </br>
 ![image](https://user-images.githubusercontent.com/69194903/135774219-a85f56b4-6ce0-4d7d-93ba-94247f5c1140.png)</br>
 
 - to request the data, click on `Get Data` </br>
@@ -49,11 +49,13 @@ then **confirm**
 ![image](https://user-images.githubusercontent.com/69194903/135774490-4f55773f-d79f-415d-8272-d96aff9e75b9.png)
 - under `More` section, the user will be able to view different data graphed on the chart including (the temperature, precipitation and sky clearness)
 
-**I love software engineering, care about the world, and am always 
-thinking/looking for ideas/solutions that can be implemented to improve this life of ours.
-Participating in a hackathon like Nasa space apps was not only enjoyable but 
-also another opportunity to contribute to our great society. Thanks for your help and even after this hackathon
-I will continue to improve this app and even host it on Play Store so that it can be reached by many people. 💪️🚀️😍️
+
+</br></br></br>
+**I love software engineering, care about the world, and am always </br>
+thinking/looking for ideas/solutions that can be implemented to improve this life of ours.</br>
+Participating in a hackathon like Nasa space apps was not only enjoyable but </br>
+also another opportunity to contribute to our great society. Thanks for your help and even after this hackathon </br>
+I will continue to improve this app and even host it on Play Store so that it can be reached by many people. 💪️🚀️😍️ </br>
 I'm learning threejs, and hope my next project will take us back on the moon 😊️ **
 
 
